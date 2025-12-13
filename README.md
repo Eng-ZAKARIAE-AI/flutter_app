@@ -1,6 +1,6 @@
-# 📱 Calorie Lens - Suivi de Calories Intelligent avec IA
+# 📱 RamzALFiteness - Suivi de Calories Intelligent avec IA
 
-**Calorie Lens** est une application Flutter intelligente et conviviale conçue pour aider les utilisateurs à surveiller leur consommation alimentaire, suivre leurs calories et gérer leurs objectifs de santé grâce à la reconnaissance d'images par IA.
+**RamzALFitenesss** est une application Flutter intelligente et conviviale conçue pour aider les utilisateurs à surveiller leur consommation alimentaire, suivre leurs calories et gérer leurs objectifs de santé grâce à la reconnaissance d'images par IA.
 
 ## 🎯 Fonctionnalités Principales
 
@@ -330,11 +330,16 @@ Ce projet est privé et destiné à un usage interne.
 
 ## 👥 Équipe
 
-Développé par l'équipe **Boudchiche**.
+Développé par l'équipe de **Boudchiche**. 
+nomeé par **RAJAE , ABDELGHANI , MERYAME , ZAKARIAE**.
 
 ## 📞 Support
 
-Pour toute question ou problème, contactez l'équipe de développement.
+Pour toute question ou problème, contactez l'équipe de développement. : 
+  ####  ZAKARIAE : https://www.linkedin.com/in/zakariae-el-haddouchi-992474339/
+  #### ABDELGHANI : https://www.linkedin.com/in/zakariae-el-haddouchi-992474339/
+  ####  RAJAE : https://www.linkedin.com/in/zakariae-el-haddouchi-992474339/
+  ####  MERYAME : https://www.linkedin.com/in/zakariae-el-haddouchi-992474339/
 
 ---
 
