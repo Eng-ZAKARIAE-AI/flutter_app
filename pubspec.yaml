@@ -48,6 +48,10 @@ dependencies:
   flutter_gemini: ^3.0.0
   timeago: ^3.7.0
   dartz: ^0.10.1
+  sqflite: ^2.3.0  # Mobile only (Android/iOS)
+  path: ^1.9.0
+  sembast: ^3.4.0  # Web database (works on all platforms)
+  sembast_web: 2.4.2  # Web-specific sembast implementation
 
 dev_dependencies:
   flutter_test:
