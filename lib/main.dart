@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'data/repositories/food_repository.dart';
 import 'data/repositories/user_repository.dart';
 import 'data/services/food_service.dart';
@@ -30,6 +31,10 @@ Future<void> _loadEnvironmentFile() async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Use path-based URLs instead of hash-based URLs for Flutter Web
+  // This makes URLs like /login instead of /#/login
+  usePathUrlStrategy();
 
   await _loadEnvironmentFile();
   

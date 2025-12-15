@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/services/auth_service.dart';
 import '../../data/repositories/user_repository.dart';
+import '../widgets/app_drawer.dart';
 
 /// Settings Screen
 /// 
@@ -88,6 +89,9 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(
+        currentScreenIndex: 2,
+      ),
       appBar: AppBar(
         title: Text('Settings'),
       ),

@@ -7,6 +7,7 @@ import '../cubit/food_log_cubit.dart';
 import '../widgets/daily_tracker.dart';
 import '../widgets/meal_list.dart';
 import '../widgets/alert_message_widget.dart';
+import '../widgets/app_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -64,9 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(
+        currentScreenIndex: 0,
+      ),
       appBar: AppBar(
         title: Text('Calorie Tracker'),
-        automaticallyImplyLeading: false,
       ),
       body: SafeArea(
         child: SingleChildScrollView(

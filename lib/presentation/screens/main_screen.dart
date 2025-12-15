@@ -37,6 +37,17 @@ class _MainScreenState extends State<MainScreen> {
     ];
   }
 
+  void _navigateToRoute(String route) {
+    Navigator.pushNamed(context, route);
+  }
+
+  void _navigateToScreen(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    Navigator.pop(context); // Close drawer
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

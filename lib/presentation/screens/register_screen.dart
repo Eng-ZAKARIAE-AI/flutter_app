@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../data/services/auth_service.dart';
 import '../../data/repositories/user_repository.dart';
 
@@ -97,10 +98,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
         // Continue with navigation - user is already logged in via AuthService
       }
 
-      // Step 3: Registration successful - navigate to home
+      // Step 3: Registration successful - check onboarding status
       // User is already logged in by AuthService.register()
       if (mounted) {
-        Navigator.pushReplacementNamed(context, '/home');
+        // Check if onboarding is complete (should be false for new users)
+        final prefs = await SharedPreferences.getInstance();
+        final isOnboardingComplete = prefs.getBool('onboarding_complete') ?? false;
+        
+        // Navigate to onboarding if first time, otherwise to main screen
+        Navigator.pushReplacementNamed(
+          context, 
+          isOnboardingComplete ? '/main' : '/onboarding'
+        );
       }
     } catch (e) {
       // Handle any unexpected errors

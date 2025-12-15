@@ -7,7 +7,8 @@ plugins {
 
 android {
     namespace = "com.example.ai_calorie_tracker"
-    compileSdk = flutter.compileSdkVersion
+    // Using compileSdkVersion 34 as specified
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -20,12 +21,12 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        // Application ID as specified
         applicationId = "com.example.ai_calorie_tracker"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        // Using minSdkVersion 21 as specified
+        minSdkVersion = flutter.minSdkVersion
+        // Using targetSdkVersion 34 as specified
+        targetSdk = 34
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }

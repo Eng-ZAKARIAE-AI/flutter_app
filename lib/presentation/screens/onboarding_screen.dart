@@ -70,6 +70,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     await prefManager.saveUserData(userData);
   }
 
+  Future<void> _completeOnboarding() async {
+    // Mark onboarding as complete
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('onboarding_complete', true);
+    Navigator.pushReplacementNamed(context, '/main');
+  }
+
   void _nextPage() {
     if (_currentPage < 6) {
       if (_currentPage == 5) {
@@ -80,11 +87,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         curve: Curves.easeInOut,
       );
     } else {
-      Navigator.pushReplacementNamed(context, '/main');
+      _completeOnboarding();
     }
   }
 
-  void _skipToMain() {
+  Future<void> _skipToMain() async {
+    // Mark onboarding as complete even when skipped
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('onboarding_complete', true);
     Navigator.pushReplacementNamed(context, '/main');
   }
 
@@ -206,7 +216,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             DropdownButton<String>(
               value: gender,
               isExpanded: true,
-              items: ['Male', 'Female', 'Other']
+              items: ['Male', 'Female']
                   .map((g) => DropdownMenuItem(value: g, child: Text(g)))
                   .toList(),
               onChanged: (value) => setState(() => gender = value),

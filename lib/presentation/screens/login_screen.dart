@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../data/services/auth_service.dart';
 
 /// Login Screen
@@ -57,9 +58,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
       // Check if login was successful
       if (userId != null && mounted) {
-        // Login successful - navigate to home screen
+        // Check if onboarding is complete
+        final prefs = await SharedPreferences.getInstance();
+        final isOnboardingComplete = prefs.getBool('onboarding_complete') ?? false;
+        
+        // Navigate to onboarding if first time, otherwise to main screen
         // Using pushReplacementNamed to prevent going back to login
-        Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(
+          context, 
+          isOnboardingComplete ? '/main' : '/onboarding'
+        );
       } else {
         // Login failed - show error message
         if (mounted) {

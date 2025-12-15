@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/food_log_cubit.dart';
+import '../widgets/app_drawer.dart';
 
 class GraphScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(
+        currentScreenIndex: 1,
+      ),
       appBar: AppBar(
         title: Text('Weekly Progress'),
-        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
