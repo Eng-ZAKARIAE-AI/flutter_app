@@ -7,8 +7,8 @@ plugins {
 
 android {
     namespace = "com.example.ai_calorie_tracker"
-    // Using compileSdkVersion 34 as specified
-    compileSdk = 34
+    // Updated to compileSdk 36 for sqflite_android compatibility
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -23,10 +23,9 @@ android {
     defaultConfig {
         // Application ID as specified
         applicationId = "com.example.ai_calorie_tracker"
-        // Using minSdkVersion 21 as specified
         minSdkVersion = flutter.minSdkVersion
-        // Using targetSdkVersion 34 as specified
-        targetSdk = 34
+        // Updated to targetSdk 36 for compatibility with compileSdk 36
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
